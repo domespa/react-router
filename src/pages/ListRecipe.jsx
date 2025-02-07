@@ -13,6 +13,17 @@ export default function ListRecipe() {
   useEffect(() => {
     fetchPosts();
   }, []);
+
+  // CANCELLAZIONE ARTICOLO
+
+  const deleteArticle = (articleId) => {
+    axios.delete(`http://localhost:3005/posts/${articleId}`).then((res) => {
+      setArticlesList((currentList) =>
+        currentList.filter((article) => article.id !== articleId)
+      );
+    });
+  };
+
   return (
     <>
       <div className="container">

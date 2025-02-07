@@ -1,3 +1,3 @@
 export default function AboutUs() {
-  return <h1>Contact us</h1>;
+  return <div className="container">NON LO SO</div>;
 }
