@@ -27,24 +27,22 @@ export default function ListRecipe() {
   return (
     <>
       <div className="container">
-        <div className="col">
-          <ul>
-            {articlesList.map((article) => (
-              <li key={article.id}>
-                <strong>{article.title}</strong>
-                <br />
-                <div>
-                  <img src={article.image} alt="" />
-                </div>
-                <em>
-                  {article.content} {article.category}
-                </em>
-                <button onClick={() => deleteArticle(article.id)}>
-                  Cancella
-                </button>
-              </li>
-            ))}
-          </ul>
+        <h2>Lista Ricette</h2>
+        <div className="row">
+          {articlesList.map((article) => (
+            <div className="col" key={article.id}>
+              <h3>{article.title}</h3>
+              <div>
+                <img src={article.image} alt="" />
+              </div>
+              <p>
+                {article.content} {article.category}
+              </p>
+              <button onClick={() => deleteArticle(article.id)}>
+                Cancella
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </>

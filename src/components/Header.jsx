@@ -1,26 +1,12 @@
-import { NavLink } from "react-router-dom";
+import Logo from "../components/Logo";
+import Navbar from "./Navbar";
 
 export default function Header() {
   return (
     <header>
-      <img
-        src="https://www.ricettegourmet.com/wp-content/uploads/2024/02/Ricette-gourmet-logo-trasparente.png"
-        alt="Logo"
-      />
+      <Logo />
       <div>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Homepage</NavLink>
-            </li>
-            <li>
-              <NavLink to="/ListRecipe">Lista Ricette</NavLink>
-            </li>
-            <li>
-              <NavLink to="/AboutUs">Chi siamo</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
       </div>
     </header>
   );
