@@ -10,6 +10,7 @@ import PageNotFound from "./pages/PageNotFound";
 import ListRecipe from "./pages/ListRecipe";
 import AddRecipe from "./pages/AddRecipe";
 import DefLayout from "./layouts/DefLayout";
+import Recipe from "./pages/Recipe";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route element={<DefLayout />}>
           <Route index element={<Homepage />} />
           <Route path="/ListRecipe" element={<ListRecipe />} />
+          <Route path="/ListRecipe/:id" element={<Recipe />} />
           <Route path="/AddRecipe" element={<AddRecipe />} />
           <Route path="/AboutUs" element={<AboutUs />} />
         </Route>

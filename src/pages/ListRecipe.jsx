@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function ListRecipe() {
   const [articlesList, setArticlesList] = useState([]);
@@ -31,12 +32,15 @@ export default function ListRecipe() {
         <div className="row">
           {articlesList.map((article) => (
             <div className="col" key={article.id}>
-              <h3>{article.title}</h3>
+              <Link to={`/ListRecipe/${article.id}`}>
+                <h3>{article.title}</h3>
+              </Link>
               <div>
                 <img src={article.image} alt="" />
               </div>
               <p>
-                {article.content} {article.category}
+                {article.content} {""} <br />#{" "}
+                <strong>{article.category}</strong>
               </p>
               <button onClick={() => deleteArticle(article.id)}>
                 Cancella
